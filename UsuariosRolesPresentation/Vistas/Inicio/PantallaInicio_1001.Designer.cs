@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             iconButtonGenerarBD = new FontAwesome.Sharp.IconButton();
+            iconButtonUsuarios = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)splitContainerContenido).BeginInit();
             splitContainerContenido.Panel1.SuspendLayout();
             splitContainerContenido.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // panelBarraNavegacionBotones
             // 
+            panelBarraNavegacionBotones.Controls.Add(iconButtonUsuarios);
             panelBarraNavegacionBotones.Controls.Add(iconButtonGenerarBD);
             // 
             // iconButtonGenerarBD
@@ -70,6 +72,20 @@
             iconButtonGenerarBD.Text = "Generar BD";
             iconButtonGenerarBD.UseVisualStyleBackColor = true;
             iconButtonGenerarBD.Click += iconButtonGenerarBD_Click;
+            // 
+            // iconButtonUsuarios
+            // 
+            iconButtonUsuarios.Dock = DockStyle.Top;
+            iconButtonUsuarios.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonUsuarios.IconColor = Color.Black;
+            iconButtonUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonUsuarios.Location = new Point(0, 23);
+            iconButtonUsuarios.Name = "iconButtonUsuarios";
+            iconButtonUsuarios.Size = new Size(163, 23);
+            iconButtonUsuarios.TabIndex = 1;
+            iconButtonUsuarios.Text = "Usuarios";
+            iconButtonUsuarios.UseVisualStyleBackColor = true;
+            iconButtonUsuarios.Click += iconButtonUsuarios_Click;
             // 
             // PantallaInicio_1001
             // 
@@ -93,5 +109,6 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconButtonGenerarBD;
+        private FontAwesome.Sharp.IconButton iconButtonUsuarios;
     }
 }

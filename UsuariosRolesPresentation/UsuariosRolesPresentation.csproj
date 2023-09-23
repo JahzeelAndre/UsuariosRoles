@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Vistas\Login\" />
-    <Folder Include="Vistas\Usuarios\" />
   </ItemGroup>
 
   <ItemGroup>

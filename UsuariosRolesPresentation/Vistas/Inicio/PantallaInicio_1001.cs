@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UsuariosRolesBackend.Negocio;
+using UsuariosRolesPresentation.Vistas.Usuarios;
 
 namespace UsuariosRolesPresentation.Vistas.Inicio
 {
@@ -30,7 +31,28 @@ namespace UsuariosRolesPresentation.Vistas.Inicio
                 await crearBD.generarBaseDeDatos();
                 MessageBox.Show("La base de datos se ha generado correctamente.");
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lo sentimos, ha ocurrido el siguiente error: " + ex.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private void iconButtonUsuarios_Click(object sender, EventArgs e)
+        {
+            activarBotonNavegacion(sender);
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                PantallaUsuarios_1001 pantallaUsuarios_1001 = new PantallaUsuarios_1001();
+                pantallaUsuarios_1001.Dock = DockStyle.Fill;
+                splitContainerContenido.Panel2.Controls.Clear();
+                splitContainerContenido.Panel2.Controls.Add(pantallaUsuarios_1001);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Lo sentimos, ha ocurrido el siguiente error: " + ex.Message);
             }
