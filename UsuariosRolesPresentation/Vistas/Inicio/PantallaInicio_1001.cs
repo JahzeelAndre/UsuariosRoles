@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace UsuariosRolesPresentation.Vistas.Inicio
             try
             {
                 Cursor = Cursors.WaitCursor;
-                CrearBD crearBD = new CrearBD() { CadenaConexion = "server=DESKTOP-KAM2QVH\\SQLEXPRESS;Integrated Security=true;TrustServerCertificate=true;" };
+                CrearBD crearBD = new CrearBD() { CadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString };
                 await crearBD.generarBaseDeDatos();
                 MessageBox.Show("La base de datos se ha generado correctamente.");
             }
