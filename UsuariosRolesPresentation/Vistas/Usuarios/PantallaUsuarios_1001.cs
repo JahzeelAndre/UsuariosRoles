@@ -55,15 +55,19 @@ namespace UsuariosRolesPresentation.Vistas.Usuarios
                     }
                 }
 
-                //checkedListBoxModulos.Items.Clear();
-                //List<ModulosInfo>? listaModulos = await _modulosBAL.obtenerListaEntidades();
-                //if (listaModulos != null && listaModulos.Count > 0)
-                //{
-                //    foreach (ModulosInfo moduloItem in listaModulos)
-                //    {
-                //        checkedListBoxModulos.Items.Add(moduloItem.Nombre, false);
-                //    }
-                //}
+                flowLayoutPanelModulos.Controls.Clear();
+
+                List<ModulosInfo>? listaModulos = await _modulosBAL.obtenerListaEntidades();
+                if (listaModulos != null && listaModulos.Count > 0)
+                {
+                    foreach (ModulosInfo moduloItem in listaModulos)
+                    {
+                        flowLayoutPanelModulos.Controls.Add(
+                            new RadioButton() { Text = moduloItem.Nombre, Checked = false, Name = $"radioButton{moduloItem.Nombre}" }
+                            );
+                    }
+                }
+
             }
             catch (Exception ex)
             {

@@ -39,15 +39,7 @@
             checkedListBoxPermisos = new CheckedListBox();
             label2 = new Label();
             panelModulos = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
-            radioButton6 = new RadioButton();
-            radioButton7 = new RadioButton();
-            radioButton8 = new RadioButton();
+            flowLayoutPanelModulos = new FlowLayoutPanel();
             label3 = new Label();
             tabPagePermisos = new TabPage();
             panel1 = new Panel();
@@ -66,7 +58,6 @@
             splitContainerPrincipal.Panel2.SuspendLayout();
             splitContainerPrincipal.SuspendLayout();
             panelModulos.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             tabPagePermisos.SuspendLayout();
             panel1.SuspendLayout();
             tabPageModulos.SuspendLayout();
@@ -199,7 +190,7 @@
             // 
             // panelModulos
             // 
-            panelModulos.Controls.Add(flowLayoutPanel1);
+            panelModulos.Controls.Add(flowLayoutPanelModulos);
             panelModulos.Controls.Add(label3);
             panelModulos.Dock = DockStyle.Fill;
             panelModulos.Location = new Point(3, 215);
@@ -207,109 +198,13 @@
             panelModulos.Size = new Size(692, 206);
             panelModulos.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelModulos
             // 
-            flowLayoutPanel1.Controls.Add(radioButton1);
-            flowLayoutPanel1.Controls.Add(radioButton2);
-            flowLayoutPanel1.Controls.Add(radioButton3);
-            flowLayoutPanel1.Controls.Add(radioButton4);
-            flowLayoutPanel1.Controls.Add(radioButton5);
-            flowLayoutPanel1.Controls.Add(radioButton6);
-            flowLayoutPanel1.Controls.Add(radioButton7);
-            flowLayoutPanel1.Controls.Add(radioButton8);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 21);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(692, 185);
-            flowLayoutPanel1.TabIndex = 3;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(3, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(94, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(103, 3);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(94, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(203, 3);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(94, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(303, 3);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(94, 19);
-            radioButton4.TabIndex = 3;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "radioButton4";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(403, 3);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(94, 19);
-            radioButton5.TabIndex = 4;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "radioButton5";
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(503, 3);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(94, 19);
-            radioButton6.TabIndex = 5;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "radioButton6";
-            radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            radioButton7.AutoSize = true;
-            radioButton7.Location = new Point(3, 28);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(94, 19);
-            radioButton7.TabIndex = 6;
-            radioButton7.TabStop = true;
-            radioButton7.Text = "radioButton7";
-            radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            radioButton8.AutoSize = true;
-            radioButton8.Location = new Point(103, 28);
-            radioButton8.Name = "radioButton8";
-            radioButton8.Size = new Size(94, 19);
-            radioButton8.TabIndex = 7;
-            radioButton8.TabStop = true;
-            radioButton8.Text = "radioButton8";
-            radioButton8.UseVisualStyleBackColor = true;
+            flowLayoutPanelModulos.Dock = DockStyle.Fill;
+            flowLayoutPanelModulos.Location = new Point(0, 21);
+            flowLayoutPanelModulos.Name = "flowLayoutPanelModulos";
+            flowLayoutPanelModulos.Size = new Size(692, 185);
+            flowLayoutPanelModulos.TabIndex = 3;
             // 
             // label3
             // 
@@ -436,8 +331,6 @@
             splitContainerPrincipal.ResumeLayout(false);
             panelModulos.ResumeLayout(false);
             panelModulos.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             tabPagePermisos.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -469,14 +362,6 @@
         private Button buttonAgregarModulo;
         private TextBox textBoxNombreModulo;
         private Label label5;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
-        private RadioButton radioButton5;
-        private RadioButton radioButton6;
-        private RadioButton radioButton7;
-        private RadioButton radioButton8;
+        private FlowLayoutPanel flowLayoutPanelModulos;
     }
 }
