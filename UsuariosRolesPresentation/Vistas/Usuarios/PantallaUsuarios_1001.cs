@@ -37,6 +37,8 @@ namespace UsuariosRolesPresentation.Vistas.Usuarios
             }
         }
 
+        #region Métodos...
+
         #region TabPage Perfiles...
         public async void IniciarComponentesTabPagePerfiles()
         {
@@ -63,7 +65,7 @@ namespace UsuariosRolesPresentation.Vistas.Usuarios
                     foreach (ModulosInfo moduloItem in listaModulos)
                     {
                         flowLayoutPanelModulos.Controls.Add(
-                            new RadioButton() { Text = moduloItem.Nombre, Checked = false, Name = $"radioButton{moduloItem.Nombre}" }
+                            new RadioButton() { Text = moduloItem.Nombre, Checked = false, Name = $"radioButton{moduloItem.Nombre}", AutoSize = true, Font = YibTronFronted.Utilerias.Letras.letraPrimaria(12) }
                             );
                     }
                 }
@@ -79,7 +81,26 @@ namespace UsuariosRolesPresentation.Vistas.Usuarios
             }
 
         }
-        #endregion Perfiles
+        #endregion TabPage Perfiles
+
+        public void cambiarLetraControles(Control control, int tamaño)
+        {
+            foreach (Control controlItem in control.Controls)
+            {
+                cambiarLetraControles(controlItem, tamaño);
+            }
+            control.Font = YibTronFronted.Utilerias.Letras.letraPrimaria(tamaño);
+        }
+
+        #endregion Métodos
+
+        #region Eventos...
+
+        #region TabPages Perfiles...
+
+
+
+        #endregion TabPages Perfiles
 
         private void buttonAgregarOperacion_Click(object sender, EventArgs e)
         {
@@ -102,6 +123,44 @@ namespace UsuariosRolesPresentation.Vistas.Usuarios
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        #endregion Eventos
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PantallaUsuarios_1001_Resize(object sender, EventArgs e)
+        {
+            if (Height >= 500)
+            {
+                switch (tabControlPrincipal.SelectedTab.Text)
+                {
+                    case "Usuarios":
+                        break;
+                    case "Roles":
+                        break;
+                    case "Perfiles":
+                        cambiarLetraControles(tabPagePerfiles, 14);
+                        break;
+                }
+            }
+            else
+            {
+                switch (tabControlPrincipal.SelectedTab.Text)
+                {
+                    case "Usuarios":
+                        break;
+                    case "Roles":
+                        break;
+                    case "Perfiles":
+                        cambiarLetraControles(tabPagePerfiles, 12);
+
+                        break;
+                }
             }
         }
     }

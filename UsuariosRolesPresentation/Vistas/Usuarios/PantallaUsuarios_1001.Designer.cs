@@ -32,15 +32,18 @@
             tabPageUsuarios = new TabPage();
             tabPageRoles = new TabPage();
             tabPagePerfiles = new TabPage();
-            tableLayoutPanelPrincipal = new TableLayoutPanel();
-            splitContainerPrincipal = new SplitContainer();
+            tableLayoutPanelPerfiles = new TableLayoutPanel();
+            panelDatos = new Panel();
+            tableLayoutPanelSaveButton = new TableLayoutPanel();
+            iconButtonGuardar = new FontAwesome.Sharp.IconButton();
             textBoxNombrePerfil = new TextBox();
-            label1 = new Label();
+            labelNombrePerfil = new Label();
+            panelPermisos = new Panel();
             checkedListBoxPermisos = new CheckedListBox();
-            label2 = new Label();
-            panelModulos = new Panel();
+            labelPermisos = new Label();
+            panel2 = new Panel();
             flowLayoutPanelModulos = new FlowLayoutPanel();
-            label3 = new Label();
+            labelModulos = new Label();
             tabPagePermisos = new TabPage();
             panel1 = new Panel();
             buttonAgregarOperacion = new Button();
@@ -52,12 +55,11 @@
             label5 = new Label();
             tabControlPrincipal.SuspendLayout();
             tabPagePerfiles.SuspendLayout();
-            tableLayoutPanelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).BeginInit();
-            splitContainerPrincipal.Panel1.SuspendLayout();
-            splitContainerPrincipal.Panel2.SuspendLayout();
-            splitContainerPrincipal.SuspendLayout();
-            panelModulos.SuspendLayout();
+            tableLayoutPanelPerfiles.SuspendLayout();
+            panelDatos.SuspendLayout();
+            tableLayoutPanelSaveButton.SuspendLayout();
+            panelPermisos.SuspendLayout();
+            panel2.SuspendLayout();
             tabPagePermisos.SuspendLayout();
             panel1.SuspendLayout();
             tabPageModulos.SuspendLayout();
@@ -100,7 +102,7 @@
             // 
             // tabPagePerfiles
             // 
-            tabPagePerfiles.Controls.Add(tableLayoutPanelPrincipal);
+            tabPagePerfiles.Controls.Add(tableLayoutPanelPerfiles);
             tabPagePerfiles.Location = new Point(4, 24);
             tabPagePerfiles.Name = "tabPagePerfiles";
             tabPagePerfiles.Padding = new Padding(3);
@@ -109,113 +111,155 @@
             tabPagePerfiles.Text = "Perfiles";
             tabPagePerfiles.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanelPrincipal
+            // tableLayoutPanelPerfiles
             // 
-            tableLayoutPanelPrincipal.ColumnCount = 1;
-            tableLayoutPanelPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanelPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanelPrincipal.Controls.Add(splitContainerPrincipal, 0, 0);
-            tableLayoutPanelPrincipal.Controls.Add(panelModulos, 0, 1);
-            tableLayoutPanelPrincipal.Dock = DockStyle.Fill;
-            tableLayoutPanelPrincipal.Location = new Point(3, 3);
-            tableLayoutPanelPrincipal.Name = "tableLayoutPanelPrincipal";
-            tableLayoutPanelPrincipal.RowCount = 2;
-            tableLayoutPanelPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanelPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanelPrincipal.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanelPrincipal.Size = new Size(698, 424);
-            tableLayoutPanelPrincipal.TabIndex = 1;
+            tableLayoutPanelPerfiles.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tableLayoutPanelPerfiles.ColumnCount = 3;
+            tableLayoutPanelPerfiles.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanelPerfiles.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanelPerfiles.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanelPerfiles.Controls.Add(panelDatos, 0, 0);
+            tableLayoutPanelPerfiles.Controls.Add(panelPermisos, 1, 0);
+            tableLayoutPanelPerfiles.Controls.Add(panel2, 2, 0);
+            tableLayoutPanelPerfiles.Dock = DockStyle.Fill;
+            tableLayoutPanelPerfiles.Location = new Point(3, 3);
+            tableLayoutPanelPerfiles.Name = "tableLayoutPanelPerfiles";
+            tableLayoutPanelPerfiles.RowCount = 1;
+            tableLayoutPanelPerfiles.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelPerfiles.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelPerfiles.Size = new Size(698, 424);
+            tableLayoutPanelPerfiles.TabIndex = 1;
             // 
-            // splitContainerPrincipal
+            // panelDatos
             // 
-            splitContainerPrincipal.Dock = DockStyle.Fill;
-            splitContainerPrincipal.Location = new Point(3, 3);
-            splitContainerPrincipal.Name = "splitContainerPrincipal";
+            panelDatos.Controls.Add(tableLayoutPanelSaveButton);
+            panelDatos.Controls.Add(textBoxNombrePerfil);
+            panelDatos.Controls.Add(labelNombrePerfil);
+            panelDatos.Dock = DockStyle.Fill;
+            panelDatos.Location = new Point(4, 4);
+            panelDatos.Name = "panelDatos";
+            panelDatos.Size = new Size(225, 416);
+            panelDatos.TabIndex = 4;
             // 
-            // splitContainerPrincipal.Panel1
+            // tableLayoutPanelSaveButton
             // 
-            splitContainerPrincipal.Panel1.Controls.Add(textBoxNombrePerfil);
-            splitContainerPrincipal.Panel1.Controls.Add(label1);
+            tableLayoutPanelSaveButton.AutoSize = true;
+            tableLayoutPanelSaveButton.ColumnCount = 1;
+            tableLayoutPanelSaveButton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSaveButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelSaveButton.Controls.Add(iconButtonGuardar, 0, 0);
+            tableLayoutPanelSaveButton.Dock = DockStyle.Fill;
+            tableLayoutPanelSaveButton.Location = new Point(0, 49);
+            tableLayoutPanelSaveButton.Name = "tableLayoutPanelSaveButton";
+            tableLayoutPanelSaveButton.RowCount = 1;
+            tableLayoutPanelSaveButton.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSaveButton.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelSaveButton.Size = new Size(225, 367);
+            tableLayoutPanelSaveButton.TabIndex = 8;
             // 
-            // splitContainerPrincipal.Panel2
+            // iconButtonGuardar
             // 
-            splitContainerPrincipal.Panel2.Controls.Add(checkedListBoxPermisos);
-            splitContainerPrincipal.Panel2.Controls.Add(label2);
-            splitContainerPrincipal.Size = new Size(692, 206);
-            splitContainerPrincipal.SplitterDistance = 230;
-            splitContainerPrincipal.TabIndex = 0;
+            iconButtonGuardar.Anchor = AnchorStyles.Top;
+            iconButtonGuardar.AutoSize = true;
+            iconButtonGuardar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButtonGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            iconButtonGuardar.IconColor = Color.Blue;
+            iconButtonGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonGuardar.IconSize = 30;
+            iconButtonGuardar.Location = new Point(68, 8);
+            iconButtonGuardar.Margin = new Padding(3, 8, 3, 3);
+            iconButtonGuardar.Name = "iconButtonGuardar";
+            iconButtonGuardar.Size = new Size(89, 36);
+            iconButtonGuardar.TabIndex = 7;
+            iconButtonGuardar.Text = "Guardar";
+            iconButtonGuardar.TextImageRelation = TextImageRelation.TextBeforeImage;
+            iconButtonGuardar.UseVisualStyleBackColor = true;
             // 
             // textBoxNombrePerfil
             // 
             textBoxNombrePerfil.Dock = DockStyle.Top;
-            textBoxNombrePerfil.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNombrePerfil.Location = new Point(0, 21);
+            textBoxNombrePerfil.Location = new Point(0, 26);
             textBoxNombrePerfil.Name = "textBoxNombrePerfil";
-            textBoxNombrePerfil.Size = new Size(230, 27);
-            textBoxNombrePerfil.TabIndex = 1;
+            textBoxNombrePerfil.Size = new Size(225, 23);
+            textBoxNombrePerfil.TabIndex = 7;
             // 
-            // label1
+            // labelNombrePerfil
             // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(111, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre perfil:";
+            labelNombrePerfil.AutoSize = true;
+            labelNombrePerfil.Dock = DockStyle.Top;
+            labelNombrePerfil.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNombrePerfil.Location = new Point(0, 0);
+            labelNombrePerfil.Name = "labelNombrePerfil";
+            labelNombrePerfil.Padding = new Padding(0, 0, 0, 5);
+            labelNombrePerfil.Size = new Size(111, 26);
+            labelNombrePerfil.TabIndex = 1;
+            labelNombrePerfil.Text = "Nombre perfil:";
+            // 
+            // panelPermisos
+            // 
+            panelPermisos.Controls.Add(checkedListBoxPermisos);
+            panelPermisos.Controls.Add(labelPermisos);
+            panelPermisos.Dock = DockStyle.Fill;
+            panelPermisos.Location = new Point(236, 4);
+            panelPermisos.Name = "panelPermisos";
+            panelPermisos.Size = new Size(225, 416);
+            panelPermisos.TabIndex = 2;
             // 
             // checkedListBoxPermisos
             // 
+            checkedListBoxPermisos.BorderStyle = BorderStyle.None;
+            checkedListBoxPermisos.CheckOnClick = true;
             checkedListBoxPermisos.Dock = DockStyle.Fill;
             checkedListBoxPermisos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             checkedListBoxPermisos.FormattingEnabled = true;
-            checkedListBoxPermisos.HorizontalScrollbar = true;
-            checkedListBoxPermisos.Location = new Point(0, 21);
+            checkedListBoxPermisos.Location = new Point(0, 26);
             checkedListBoxPermisos.MultiColumn = true;
             checkedListBoxPermisos.Name = "checkedListBoxPermisos";
-            checkedListBoxPermisos.Size = new Size(458, 185);
-            checkedListBoxPermisos.TabIndex = 2;
+            checkedListBoxPermisos.Size = new Size(225, 390);
+            checkedListBoxPermisos.TabIndex = 3;
             // 
-            // label2
+            // labelPermisos
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Permisos:";
+            labelPermisos.AutoSize = true;
+            labelPermisos.Dock = DockStyle.Top;
+            labelPermisos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPermisos.Location = new Point(0, 0);
+            labelPermisos.Name = "labelPermisos";
+            labelPermisos.Padding = new Padding(0, 0, 0, 5);
+            labelPermisos.Size = new Size(76, 26);
+            labelPermisos.TabIndex = 2;
+            labelPermisos.Text = "Permisos:";
             // 
-            // panelModulos
+            // panel2
             // 
-            panelModulos.Controls.Add(flowLayoutPanelModulos);
-            panelModulos.Controls.Add(label3);
-            panelModulos.Dock = DockStyle.Fill;
-            panelModulos.Location = new Point(3, 215);
-            panelModulos.Name = "panelModulos";
-            panelModulos.Size = new Size(692, 206);
-            panelModulos.TabIndex = 1;
+            panel2.Controls.Add(flowLayoutPanelModulos);
+            panel2.Controls.Add(labelModulos);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(468, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(226, 416);
+            panel2.TabIndex = 3;
             // 
             // flowLayoutPanelModulos
             // 
             flowLayoutPanelModulos.Dock = DockStyle.Fill;
-            flowLayoutPanelModulos.Location = new Point(0, 21);
+            flowLayoutPanelModulos.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelModulos.Location = new Point(0, 26);
             flowLayoutPanelModulos.Name = "flowLayoutPanelModulos";
-            flowLayoutPanelModulos.Size = new Size(692, 185);
-            flowLayoutPanelModulos.TabIndex = 3;
+            flowLayoutPanelModulos.Size = new Size(226, 390);
+            flowLayoutPanelModulos.TabIndex = 4;
             // 
-            // label3
+            // labelModulos
             // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Top;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(0, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(74, 21);
-            label3.TabIndex = 2;
-            label3.Text = "Módulos:";
+            labelModulos.AutoSize = true;
+            labelModulos.Dock = DockStyle.Top;
+            labelModulos.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelModulos.Location = new Point(0, 0);
+            labelModulos.Name = "labelModulos";
+            labelModulos.Padding = new Padding(0, 0, 0, 5);
+            labelModulos.Size = new Size(74, 26);
+            labelModulos.TabIndex = 3;
+            labelModulos.Text = "Módulos:";
             // 
             // tabPagePermisos
             // 
@@ -320,17 +364,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tabControlPrincipal);
             Name = "PantallaUsuarios_1001";
+            Resize += PantallaUsuarios_1001_Resize;
             tabControlPrincipal.ResumeLayout(false);
             tabPagePerfiles.ResumeLayout(false);
-            tableLayoutPanelPrincipal.ResumeLayout(false);
-            splitContainerPrincipal.Panel1.ResumeLayout(false);
-            splitContainerPrincipal.Panel1.PerformLayout();
-            splitContainerPrincipal.Panel2.ResumeLayout(false);
-            splitContainerPrincipal.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainerPrincipal).EndInit();
-            splitContainerPrincipal.ResumeLayout(false);
-            panelModulos.ResumeLayout(false);
-            panelModulos.PerformLayout();
+            tableLayoutPanelPerfiles.ResumeLayout(false);
+            panelDatos.ResumeLayout(false);
+            panelDatos.PerformLayout();
+            tableLayoutPanelSaveButton.ResumeLayout(false);
+            tableLayoutPanelSaveButton.PerformLayout();
+            panelPermisos.ResumeLayout(false);
+            panelPermisos.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             tabPagePermisos.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -345,14 +390,7 @@
         private TabPage tabPageUsuarios;
         private TabPage tabPageRoles;
         private TabPage tabPagePerfiles;
-        private TableLayoutPanel tableLayoutPanelPrincipal;
-        private SplitContainer splitContainerPrincipal;
-        private TextBox textBoxNombrePerfil;
-        private Label label1;
-        private Label label2;
-        private CheckedListBox checkedListBoxPermisos;
-        private Panel panelModulos;
-        private Label label3;
+        private TableLayoutPanel tableLayoutPanelPerfiles;
         private TabPage tabPagePermisos;
         private TabPage tabPageModulos;
         private Panel panel1;
@@ -362,6 +400,17 @@
         private Button buttonAgregarModulo;
         private TextBox textBoxNombreModulo;
         private Label label5;
+        private Panel panelPermisos;
+        private CheckedListBox checkedListBoxPermisos;
+        private Label labelPermisos;
+        private Panel panel2;
         private FlowLayoutPanel flowLayoutPanelModulos;
+        private Label labelModulos;
+        private Panel panelDatos;
+        private Label labelNombrePerfil;
+        private TextBox textBoxNombrePerfil;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FontAwesome.Sharp.IconButton iconButtonGuardar;
+        private TableLayoutPanel tableLayoutPanelSaveButton;
     }
 }
