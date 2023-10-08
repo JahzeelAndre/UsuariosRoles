@@ -35,7 +35,7 @@
             tableLayoutPanelPerfiles = new TableLayoutPanel();
             panelDatos = new Panel();
             tableLayoutPanelSaveButton = new TableLayoutPanel();
-            iconButtonGuardar = new FontAwesome.Sharp.IconButton();
+            iconButtonGuardarPerfil = new FontAwesome.Sharp.IconButton();
             textBoxNombrePerfil = new TextBox();
             labelNombrePerfil = new Label();
             panelPermisos = new Panel();
@@ -147,7 +147,7 @@
             tableLayoutPanelSaveButton.ColumnCount = 1;
             tableLayoutPanelSaveButton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanelSaveButton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanelSaveButton.Controls.Add(iconButtonGuardar, 0, 0);
+            tableLayoutPanelSaveButton.Controls.Add(iconButtonGuardarPerfil, 0, 0);
             tableLayoutPanelSaveButton.Dock = DockStyle.Fill;
             tableLayoutPanelSaveButton.Location = new Point(0, 49);
             tableLayoutPanelSaveButton.Name = "tableLayoutPanelSaveButton";
@@ -157,23 +157,24 @@
             tableLayoutPanelSaveButton.Size = new Size(225, 367);
             tableLayoutPanelSaveButton.TabIndex = 8;
             // 
-            // iconButtonGuardar
+            // iconButtonGuardarPerfil
             // 
-            iconButtonGuardar.Anchor = AnchorStyles.Top;
-            iconButtonGuardar.AutoSize = true;
-            iconButtonGuardar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            iconButtonGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            iconButtonGuardar.IconColor = Color.Blue;
-            iconButtonGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonGuardar.IconSize = 30;
-            iconButtonGuardar.Location = new Point(68, 8);
-            iconButtonGuardar.Margin = new Padding(3, 8, 3, 3);
-            iconButtonGuardar.Name = "iconButtonGuardar";
-            iconButtonGuardar.Size = new Size(89, 36);
-            iconButtonGuardar.TabIndex = 7;
-            iconButtonGuardar.Text = "Guardar";
-            iconButtonGuardar.TextImageRelation = TextImageRelation.TextBeforeImage;
-            iconButtonGuardar.UseVisualStyleBackColor = true;
+            iconButtonGuardarPerfil.Anchor = AnchorStyles.Top;
+            iconButtonGuardarPerfil.AutoSize = true;
+            iconButtonGuardarPerfil.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButtonGuardarPerfil.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            iconButtonGuardarPerfil.IconColor = Color.Blue;
+            iconButtonGuardarPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonGuardarPerfil.IconSize = 30;
+            iconButtonGuardarPerfil.Location = new Point(68, 8);
+            iconButtonGuardarPerfil.Margin = new Padding(3, 8, 3, 3);
+            iconButtonGuardarPerfil.Name = "iconButtonGuardarPerfil";
+            iconButtonGuardarPerfil.Size = new Size(89, 36);
+            iconButtonGuardarPerfil.TabIndex = 7;
+            iconButtonGuardarPerfil.Text = "Guardar";
+            iconButtonGuardarPerfil.TextImageRelation = TextImageRelation.TextBeforeImage;
+            iconButtonGuardarPerfil.UseVisualStyleBackColor = true;
+            iconButtonGuardarPerfil.Click += iconButtonGuardarPerfil_Click;
             // 
             // textBoxNombrePerfil
             // 
@@ -217,6 +218,7 @@
             checkedListBoxPermisos.Name = "checkedListBoxPermisos";
             checkedListBoxPermisos.Size = new Size(225, 390);
             checkedListBoxPermisos.TabIndex = 3;
+            checkedListBoxPermisos.SelectedIndexChanged += checkedListBoxPermisos_SelectedIndexChanged;
             // 
             // labelPermisos
             // 
@@ -410,7 +412,7 @@
         private Label labelNombrePerfil;
         private TextBox textBoxNombrePerfil;
         private TableLayoutPanel tableLayoutPanel1;
-        private FontAwesome.Sharp.IconButton iconButtonGuardar;
+        private FontAwesome.Sharp.IconButton iconButtonGuardarPerfil;
         private TableLayoutPanel tableLayoutPanelSaveButton;
     }
 }
